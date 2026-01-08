@@ -11,4 +11,4 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_URL).then(()=> console.log("MongoDb is Connected")).catch(error => console.log(error));
 app.use('/api/auth', authRoutes);
 const PORT = process.env.PORT
-app.listen(PORT, console.log(`Server is runnnig on Port ${PORT}`))
+app.listen(PORT, console.log(`Server is running on Port ${PORT}`))

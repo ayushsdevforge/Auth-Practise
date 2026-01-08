@@ -1,9 +1,9 @@
-import userSchema from '../models/userModel.js';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
+const userSchema = require('../model/userModel');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 
-export const registerUser = async (req, res) => {
+const registerUser = async (req, res) => {
 
     try{
 
@@ -30,7 +30,7 @@ export const registerUser = async (req, res) => {
     }
 }
 
-export const loginUser = async(req, res) => {
+const loginUser = async(req, res) => {
     try{
 
        const {email, password} = req.body;
@@ -59,3 +59,5 @@ export const loginUser = async(req, res) => {
         res.status(500).json({ message: 'Server Error' });
     }
 }
+
+module.exports = { registerUser, loginUser };
